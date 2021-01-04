@@ -25,7 +25,7 @@ int main() {
 	s = e = sum = 0;
 	
 	while (true) {
-		if (e == N) break;
+		if (e == N && sum < S) break;
 		else if (sum < S) {
 			sum += arr[e++];
 		}
