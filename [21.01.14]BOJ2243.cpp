@@ -1,6 +1,6 @@
 /*
 	21.01.14
-	BOJ : 2243 청소년 상어 (https://www.acmicpc.net/problem/2243)
+	BOJ : 2243 사탕상자 (https://www.acmicpc.net/problem/2243)
 	자료구조/세그먼트 트리
 */
 #include <bits/stdc++.h>
