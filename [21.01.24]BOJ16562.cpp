@@ -1,6 +1,6 @@
 /*
 	21.01.24
-	BOJ : 16562 미로만들기  (https://www.acmicpc.net/problem/16562)
+	BOJ : 16562 친구비  (https://www.acmicpc.net/problem/16562)
 	유니온 파인드
 */
 #include <bits/stdc++.h>
