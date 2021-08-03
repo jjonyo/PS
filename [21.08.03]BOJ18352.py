@@ -3,7 +3,9 @@
 	BOJ : 18352 특정 거리의 도시 찾기 (https://www.acmicpc.net/problem/18352)
 	Algorithm : 그래프탐색
 '''
+import sys
 from collections import deque
+input = sys.stdin.readline
 
 n, m, k, x = map(int,input().split())
 adj = [[] for _ in range(n + 1)]
