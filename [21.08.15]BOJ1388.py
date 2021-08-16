@@ -1,33 +1,37 @@
+'''
+    2021.08.16
+    BOJ : 1388 바닥장식 (https://www.acmicpc.net/problem/1388)
+    Algorithm : 그래프 탐색
+'''
 from collections import deque
 
 N, M = map(int, input().split())
 board = []
-vis = [[0 for _ in range(N)] for _ in range(M)]
-for _ in range(M) :
+vis = [[0 for _ in range(M)] for _ in range(N)]
+for _ in range(N) :
     board.append(input())
 
 ans = 0
 for i in range(N) :
     for j in range(M) :
         if vis[i][j] : continue
-        queue = deque()
-        vis[i][j] = 1
-        queue.append([board[i][j],i,j])
         ans += 1
+        vis[i][j] = ans
+        queue = deque()
+        queue.append([board[i][j], i, j])
         while queue :
-            cur = queue.popleft()
-            if cur[0] == '-' :
-                nxt_x = cur[1]
-                nxt_y = cur[2] + 1
-                if vis[nxt_x][nxt_y] == 0 and nxt_y < N and board[nxt_x][nxt_y] == '-' :
-                    vis[nxt_x][nxt_y] = 1
-                    queue.append(['-',cur[1], cur[2] + 1])
-            elif cur[0] == '|' :
-                nxt_x = cur[1] + 1
-                nxt_y = cur[2]
-                if vis[nxt_x][nxt_y] == 0 and nxt_x < M and board[nxt_x][nxt_y] == '-' :
-                    vis[nxt_x][nxt_y] = 1
-                    queue.append(['-',cur[1], cur[2] + 1])
-
+            c, x, y = queue.popleft()
+            if c == '-' :
+                nx = x
+                ny = y + 1
+                if nx < N and ny < M and board[nx][ny] == '-' and vis[nx][ny] == 0 :
+                    vis[nx][ny] = ans
+                    queue.append([board[nx][ny], nx, ny])
+            elif c == '|' :
+                nx = x + 1
+                ny = y
+                if nx < N and ny < M and board[nx][ny] == '|' and vis[nx][ny] == 0 :
+                    vis[nx][ny] = ans
+                    queue.append([board[nx][ny], nx, ny])
+        
 print(ans)
-
