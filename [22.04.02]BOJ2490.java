@@ -3,14 +3,14 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.lang.Exception;
 
-class Main {
+class BOJ2490 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         for (int i=0; i<3; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine(), " ");
             int zero = 0, one = 0;
-            
+
             while (st.hasMoreTokens()) {
                 String s = st.nextToken();
                 if (Integer.parseInt(s) == 0) {

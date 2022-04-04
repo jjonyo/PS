@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.Collections;
 
-class Main {
+class BOJ3048 {
     public static void main(String args[]) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        
+
         int N, M;
-        
+
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
@@ -41,17 +41,17 @@ class Main {
                     if (i == list.size() - 1) continue;
 
                     Ant nextAnt = list.get(i + 1);
-                    if (nextAnt.direction == ant.direction) continue;   
-                    if (nextAnt.isMoved) continue;                   
+                    if (nextAnt.direction == ant.direction) continue;
+                    if (nextAnt.isMoved) continue;
                     nextAnt.isMoved = true;
                     ant.isMoved = true;
                     Collections.swap(list, i, i + 1);
                 }else if (ant.direction == 1) {
                     if (i == 0) continue;
-                    
+
                     Ant nextAnt = list.get(i - 1);
-                    if (nextAnt.direction == ant.direction) continue;   
-                    if (nextAnt.isMoved) continue;                   
+                    if (nextAnt.direction == ant.direction) continue;
+                    if (nextAnt.isMoved) continue;
                     nextAnt.isMoved = true;
                     ant.isMoved = true;
                     Collections.swap(list, i, i - 1);
@@ -64,7 +64,7 @@ class Main {
             }
             T--;
         }
-        
+
         StringBuilder ans = new StringBuilder();
 
         for (Ant ant : list){
