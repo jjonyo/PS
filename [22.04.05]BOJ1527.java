@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BOJ1527 {
+class BOJ1527 {
   static int A;
   static int B;
   static int ans = 0;
