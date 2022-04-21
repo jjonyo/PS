@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class BOJ1107 {
     static int ans = Integer.MAX_VALUE;
 
     public static void main(String[] args) {
