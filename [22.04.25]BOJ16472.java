@@ -7,7 +7,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class BOJ16472 {
 
     static int N;
     static String str;
